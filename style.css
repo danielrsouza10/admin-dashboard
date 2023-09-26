@@ -15,13 +15,13 @@ body {
   border: 3px solid blue;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 1fr 4fr;
+  grid-template-rows: repeat(2, 50px) 4fr;
 }
 
 .side-bar {
   font-weight: bold;
   color: #ffffff;
-  background-color: #1992D4;
+  background-color: #1992d4;
   border: 3px solid red;
   grid-column: 1/2;
   grid-row: 1/4;
@@ -40,12 +40,14 @@ body {
 }
 
 .content-container {
-  background-color: #E2E8F0;
+  padding: 20px;
+  background-color: #e2e8f0;
   grid-column: 2/3;
   grid-row: 3/4;
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: repeat(2, min(300px, 1fr));
+  gap: 20px;
 }
 
 .projects {
@@ -53,11 +55,35 @@ body {
   grid-column: 1/2;
   grid-row: 1/3;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  gap: 20px;
 }
 
-.cards{
-  height: 250px;
+.cards {
+  background-color: #ffffff;
   border: 3px solid black;
+  border-radius: 10px;
+  padding: 20px 10px;
+}
+
+.announcements {
+  background-color: #ffffff;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 40px 30px;
+}
+
+.announcements-card {
+  padding: 20px 0;
+}
+
+.announcements-card > hr {
+  margin-bottom: 20px;
+}
+
+.announcements-title {
+  display: block;
+  font-weight: bold;
+  padding-bottom: 15px;
 }
